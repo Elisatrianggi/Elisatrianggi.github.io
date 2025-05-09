@@ -1,60 +1,140 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biodata</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        table {
-            width: 50%;
-            margin: auto;
-            border-collapse: collapse;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-        th {
-            background-color: #f8b400;
-            color: white;
-        }
-        a {
-            text-decoration: none;
-            color: #0073e6;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biodata</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdf5e6; /* Warna cream */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #f5deb3; /* Warna cream lebih gelap */
+      padding: 15px 30px;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #5c4033; /* Warna teks gelap untuk kontras */
+    }
+
+    .site-title {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #5c4033; /* Warna teks gelap untuk kontras */
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+      color: #0073e6; /* Warna biru saat hover */
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #5c4033; /* Warna teks gelap untuk kontras */
+    }
+
+    table {
+      width: 50%;
+      margin: auto;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f5deb3; /* Warna cream lebih gelap */
+      color: white;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0073e6; /* Warna biru untuk link */
+    }
+
+    footer {
+      background-color: #f5deb3; /* Warna cream lebih gelap */
+      color: #5c4033;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
 </head>
 <body>
+
+  <header>
+    <div class="header-container">
+      <div class="site-title">Perpustakaan Elisa</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
     <h2>Biodata</h2>
     <table>
-        <tr>
-            <th>Informasi</th>
-            <th>Detail</th>
-        </tr>
-        <tr>
-            <td>Nama</td>
-            <td>[Elisa Trianggi Hutabarat]</td>
-        </tr>
-        <tr>
-            <td>Email</td>
-            <td>[elisatrianggi750@gmail.com]</td>
-        </tr>
-        <tr>
-            <td>Hobby</td>
-            <td>[Berenang]</td>
-        </tr>
-        <tr>
-            <td>Instagram</td>
-            <td><a href="https://instagram.com/[username]" target="_blank">@elisa.trianggii</a></td>
-        </tr>
+      <tr>
+        <th>Informasi</th>
+        <th>Detail</th>
+      </tr>
+      <tr>
+        <td>Nama</td>
+        <td>Elisa Trianggi Hutabarat</td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>elisatrianggi750@gmail.com</td>
+      </tr>
+      <tr>
+        <td>Hobby</td>
+        <td>Berenang</td>
+      </tr>
+      <tr>
+        <td>Instagram</td>
+        <td><a href="https://instagram.com/elisa.trianggii" target="_blank">@elisa.trianggii</a></td>
+      </tr>
     </table>
+  </main>
+
+  <footer>
+    &copy; 2025 Perpustakaan Elisa. Terima kasih telah mengunjungi perpustakaan kami.
+  </footer>
+
 </body>
 </html>
