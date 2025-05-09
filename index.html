@@ -5,17 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Orang Melambai</title>
     <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
         body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
             font-family: Arial, sans-serif;
             background-color: #fdf5e6; /* warna cream */
             color: #333;
             text-align: center;
-            padding: 50px;
-            margin: 0;
-        }
-
-        h1 {
-            color: #444;
         }
 
         nav {
@@ -56,10 +59,42 @@
 
         .btn:hover {
             background-color: #c19a6b;
+            animation: wave 0.8s ease-in-out;
         }
 
         main {
-            margin-top: 30px;
+            flex: 1;
+            padding: 50px 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        footer {
+            background-color: #f5deb3;
+            padding: 20px 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Animasi tambahan */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes wave {
+            0% { transform: rotate(0deg); }
+            15% { transform: rotate(10deg); }
+            30% { transform: rotate(-8deg); }
+            45% { transform: rotate(8deg); }
+            60% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+            100% { transform: rotate(0deg); }
         }
     </style>
 </head>
@@ -85,6 +120,10 @@
             Kunjungi Perpustakaan IT Del
         </a>
     </main>
+
+    <footer>
+        &copy; 2025 Perpustakaan Elisa. Dibuat dengan ❤️ untuk penyebaran ilmu pengetahuan.
+    </footer>
 
     <!-- Hubungkan ke script.js -->
     <script src="script.js"></script>
