@@ -1,155 +1,195 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabel Perkalian</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fdf5e6; /* Warna cream */
-            color: #333;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tabel Perkalian Interaktif</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fef9f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        h1 {
-            color: #5c3a1e;
-            margin-bottom: 30px;
-        }
+    h1 {
+      font-size: 2.8em;
+      color: #5e3c2c;
+      margin-bottom: 20px;
+    }
 
-        .table-container {
-            overflow-x: auto;
-        }
+    .table-container {
+      overflow-x: auto;
+      margin-bottom: 50px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      border-radius: 16px;
+    }
 
-        table {
-            margin: 0 auto;
-            border-collapse: collapse;
-            width: 90%;
-            max-width: 700px;
-            background-color: #fffaf0;
-            border: 1px solid #d2b48c;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-        }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 800px;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      font-size: 1em;
+    }
 
-        th, td {
-            border: 1px solid #e0c9a6;
-            padding: 10px 15px;
-            text-align: center;
-        }
+    th, td {
+      padding: 14px;
+      border: 1px solid #f0e6d6;
+      text-align: center;
+      transition: background-color 0.2s ease;
+    }
 
-        th {
-            background-color: #f5deb3;
-            color: #333;
-        }
+    th {
+      background: #ffe0b2;
+      color: #5a3e28;
+    }
 
-        tr:nth-child(even) {
-            background-color: #fef9e7;
-        }
+    tr:nth-child(even) td {
+      background: #fff9f1;
+    }
 
-        .calculator {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #fffaf0;
-            border: 1px solid #d2b48c;
-            border-radius: 12px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    tr:hover td {
+      background-color: #fff3cd;
+    }
 
-        .calculator input {
-            padding: 10px;
-            margin: 5px;
-            width: 80px;
-            font-size: 16px;
-            text-align: center;
-        }
+    .calculator {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 400px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+      text-align: center;
+    }
 
-        .calculator button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #d2b48c;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
+    .calculator h2 {
+      font-size: 1.6em;
+      color: #5e3c2c;
+      margin-bottom: 20px;
+    }
 
-        .calculator button:hover {
-            background-color: #b98b5b;
-        }
+    .calculator input {
+      padding: 10px 15px;
+      margin: 10px;
+      width: 100px;
+      border-radius: 12px;
+      border: 1px solid #d2b48c;
+      font-size: 16px;
+      text-align: center;
+      outline: none;
+      transition: 0.3s;
+    }
 
-        .result {
-            margin-top: 15px;
-            font-weight: bold;
-            font-size: 18px;
-        }
+    .calculator input:focus {
+      border-color: #f4a261;
+      box-shadow: 0 0 5px rgba(244, 162, 97, 0.4);
+    }
 
-        footer {
-            margin-top: 50px;
-            font-size: 14px;
-            color: #777;
-        }
-    </style>
+    .calculator button {
+      padding: 12px 30px;
+      background-color: #f4a261;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .calculator button:hover {
+      background-color: #e76f51;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #2a9d8f;
+      min-height: 24px;
+      transition: all 0.3s ease;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      table, th, td {
+        font-size: 0.9em;
+      }
+
+      .calculator input {
+        width: 80px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <h1>📐 Tabel Perkalian 1 – 10</h1>
+  <h1>🧠 Tabel Perkalian Interaktif 1–10</h1>
 
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>x</th>
-                    <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
-                    <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Isi tabel seperti sebelumnya -->
-                <tr><th>1</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
-                <tr><th>2</th><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td><td>14</td><td>16</td><td>18</td><td>20</td></tr>
-                <tr><th>3</th><td>3</td><td>6</td><td>9</td><td>12</td><td>15</td><td>18</td><td>21</td><td>24</td><td>27</td><td>30</td></tr>
-                <tr><th>4</th><td>4</td><td>8</td><td>12</td><td>16</td><td>20</td><td>24</td><td>28</td><td>32</td><td>36</td><td>40</td></tr>
-                <tr><th>5</th><td>5</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td></tr>
-                <tr><th>6</th><td>6</td><td>12</td><td>18</td><td>24</td><td>30</td><td>36</td><td>42</td><td>48</td><td>54</td><td>60</td></tr>
-                <tr><th>7</th><td>7</td><td>14</td><td>21</td><td>28</td><td>35</td><td>42</td><td>49</td><td>56</td><td>63</td><td>70</td></tr>
-                <tr><th>8</th><td>8</td><td>16</td><td>24</td><td>32</td><td>40</td><td>48</td><td>56</td><td>64</td><td>72</td><td>80</td></tr>
-                <tr><th>9</th><td>9</td><td>18</td><td>27</td><td>36</td><td>45</td><td>54</td><td>63</td><td>72</td><td>81</td><td>90</td></tr>
-                <tr><th>10</th><td>10</td><td>20</td><td>30</td><td>40</td><td>50</td><td>60</td><td>70</td><td>80</td><td>90</td><td>100</td></tr>
-            </tbody>
-        </table>
-    </div>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>x</th>
+          <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
+          <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Isi tabel dari 1–10 -->
+        <!-- Gunakan JS atau isi manual seperti di bawah -->
+        <!-- Baris ke-1 -->
+        <tr><th>1</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+        <tr><th>2</th><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td><td>14</td><td>16</td><td>18</td><td>20</td></tr>
+        <tr><th>3</th><td>3</td><td>6</td><td>9</td><td>12</td><td>15</td><td>18</td><td>21</td><td>24</td><td>27</td><td>30</td></tr>
+        <tr><th>4</th><td>4</td><td>8</td><td>12</td><td>16</td><td>20</td><td>24</td><td>28</td><td>32</td><td>36</td><td>40</td></tr>
+        <tr><th>5</th><td>5</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td></tr>
+        <tr><th>6</th><td>6</td><td>12</td><td>18</td><td>24</td><td>30</td><td>36</td><td>42</td><td>48</td><td>54</td><td>60</td></tr>
+        <tr><th>7</th><td>7</td><td>14</td><td>21</td><td>28</td><td>35</td><td>42</td><td>49</td><td>56</td><td>63</td><td>70</td></tr>
+        <tr><th>8</th><td>8</td><td>16</td><td>24</td><td>32</td><td>40</td><td>48</td><td>56</td><td>64</td><td>72</td><td>80</td></tr>
+        <tr><th>9</th><td>9</td><td>18</td><td>27</td><td>36</td><td>45</td><td>54</td><td>63</td><td>72</td><td>81</td><td>90</td></tr>
+        <tr><th>10</th><td>10</td><td>20</td><td>30</td><td>40</td><td>50</td><td>60</td><td>70</td><td>80</td><td>90</td><td>100</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-    <div class="calculator">
-        <h2>Kalkulator Perkalian</h2>
-        <input type="number" id="angka1" placeholder="Angka 1">
-        <input type="number" id="angka2" placeholder="Angka 2">
-        <button onclick="hitungPerkalian()">Hitung</button>
-        <div class="result" id="hasil"></div>
-    </div>
+  <div class="calculator">
+    <h2>🧮 Kalkulator Perkalian</h2>
+    <input type="number" id="angka1" placeholder="Angka 1" />
+    <input type="number" id="angka2" placeholder="Angka 2" />
+    <br />
+    <button onclick="hitung()">Hitung</button>
+    <div class="result" id="hasil"></div>
+  </div>
 
-    <footer>
-        &copy; 2025 Perpustakaan Elisa. Dibuat dengan ❤️ untuk penyebaran ilmu pengetahuan.
-    </footer>
+  <footer>
+    &copy; 2025 Perpustakaan Elisa • Dibuat dengan ❤️ untuk pembelajar cerdas
+  </footer>
 
-    <script>
-        function hitungPerkalian() {
-            const a = parseFloat(document.getElementById('angka1').value);
-            const b = parseFloat(document.getElementById('angka2').value);
-            const hasil = document.getElementById('hasil');
+  <script>
+    function hitung() {
+      const a = parseFloat(document.getElementById("angka1").value);
+      const b = parseFloat(document.getElementById("angka2").value);
+      const hasil = document.getElementById("hasil");
 
-            if (!isNaN(a) && !isNaN(b)) {
-                hasil.textContent = `${a} × ${b} = ${a * b}`;
-            } else {
-                hasil.textContent = 'Mohon masukkan dua angka valid.';
-            }
-        }
-    </script>
-
+      if (!isNaN(a) && !isNaN(b)) {
+        hasil.style.color = "#2a9d8f";
+        hasil.textContent = `✅ Hasil: ${a} × ${b} = ${a * b}`;
+      } else {
+        hasil.style.color = "#e63946";
+        hasil.textContent = "⚠️ Masukkan dua angka yang valid!";
+      }
+    }
+  </script>
 </body>
 </html>
