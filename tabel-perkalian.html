@@ -49,8 +49,48 @@
             background-color: #fef9e7;
         }
 
-        footer {
+        .calculator {
             margin-top: 40px;
+            padding: 20px;
+            background-color: #fffaf0;
+            border: 1px solid #d2b48c;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .calculator input {
+            padding: 10px;
+            margin: 5px;
+            width: 80px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .calculator button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #d2b48c;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .calculator button:hover {
+            background-color: #b98b5b;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        footer {
+            margin-top: 50px;
             font-size: 14px;
             color: #777;
         }
@@ -70,6 +110,7 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- Isi tabel seperti sebelumnya -->
                 <tr><th>1</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
                 <tr><th>2</th><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td><td>14</td><td>16</td><td>18</td><td>20</td></tr>
                 <tr><th>3</th><td>3</td><td>6</td><td>9</td><td>12</td><td>15</td><td>18</td><td>21</td><td>24</td><td>27</td><td>30</td></tr>
@@ -84,9 +125,31 @@
         </table>
     </div>
 
+    <div class="calculator">
+        <h2>Kalkulator Perkalian</h2>
+        <input type="number" id="angka1" placeholder="Angka 1">
+        <input type="number" id="angka2" placeholder="Angka 2">
+        <button onclick="hitungPerkalian()">Hitung</button>
+        <div class="result" id="hasil"></div>
+    </div>
+
     <footer>
         &copy; 2025 Perpustakaan Elisa. Dibuat dengan ❤️ untuk penyebaran ilmu pengetahuan.
     </footer>
+
+    <script>
+        function hitungPerkalian() {
+            const a = parseFloat(document.getElementById('angka1').value);
+            const b = parseFloat(document.getElementById('angka2').value);
+            const hasil = document.getElementById('hasil');
+
+            if (!isNaN(a) && !isNaN(b)) {
+                hasil.textContent = `${a} × ${b} = ${a * b}`;
+            } else {
+                hasil.textContent = 'Mohon masukkan dua angka valid.';
+            }
+        }
+    </script>
 
 </body>
 </html>
