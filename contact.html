@@ -1,108 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us - Perpustakaan Elisa</title>
     <style>
+        /* Reset & Base */
         * {
             box-sizing: border-box;
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fdf5e6; /* Warna cream */
+            background: #fdf5e6;
+            color: #5c4033;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            line-height: 1.6;
         }
 
+        /* Header */
         header {
-            background-color: #f5deb3; /* Warna cream lebih gelap */
-            padding: 15px 30px;
+            background-color: #f5deb3;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 15px 40px;
         }
 
         .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: #5c4033; /* Warna teks gelap untuk kontras */
         }
 
         .site-title {
-            font-size: 22px;
-            font-weight: bold;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #4b3428;
+            user-select: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
 
         .nav-links a {
-            color: #5c4033; /* Warna teks gelap untuk kontras */
+            color: #5c4033;
+            font-weight: 600;
             text-decoration: none;
-            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: background-color 0.3s, color 0.3s;
         }
 
-        .nav-links a:hover {
-            text-decoration: underline;
-            color: #0073e6; /* Warna biru saat hover */
+        .nav-links a:hover,
+        .nav-links a:focus {
+            background-color: #c19a6b;
+            color: white;
+            outline: none;
+            box-shadow: 0 0 8px #c19a6b;
         }
 
+        /* Main Contact Section */
         .contact-form {
             flex: 1;
-            padding: 20px;
-            text-align: center;
+            max-width: 600px;
+            margin: 40px auto 60px;
+            background: #fff8e1;
+            border-radius: 14px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 25px rgba(193,154,107,0.25);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .contact-form:hover {
+            box-shadow: 0 15px 35px rgba(193,154,107,0.4);
         }
 
         .contact-form h2 {
-            margin-bottom: 20px;
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #8b6b3a;
+            text-align: center;
+            letter-spacing: 1.5px;
+            text-shadow: 1px 1px 0 #d9cbaa;
         }
 
-        .contact-form form {
+        form {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            gap: 20px;
         }
 
-        .contact-form label {
-            margin-bottom: 5px;
+        label {
+            font-weight: 600;
             font-size: 16px;
+            margin-bottom: 6px;
+            color: #7a5a2b;
+            user-select: none;
         }
 
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            max-width: 400px;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            padding: 14px 18px;
+            font-size: 16px;
+            border: 2px solid #d7c4a3;
+            border-radius: 10px;
+            background-color: #fffef9;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            resize: vertical;
+            font-family: inherit;
+            color: #5c4033;
+            outline-offset: 2px;
         }
 
-        .contact-form button {
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #c19a6b;
+            box-shadow: 0 0 8px #c19a6b;
+            background-color: #fff7dc;
+        }
+
+        button[type="submit"] {
+            background-color: #c19a6b;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 14px 0;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 12px rgba(193,154,107,0.6);
+            user-select: none;
+        }
+
+        button[type="submit"]:hover,
+        button[type="submit"]:focus {
+            background-color: #a87d44;
+            box-shadow: 0 7px 16px rgba(168,125,68,0.8);
+            outline: none;
+        }
+
+        #responseMessage {
+            margin-top: 20px;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            min-height: 24px;
+            user-select: none;
+        }
+
+        /* Footer */
+        footer {
             background-color: #f5deb3;
             color: #5c4033;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .contact-form button:hover {
-            background-color: #c19a6b;
-        }
-
-        footer {
-            background-color: #f5deb3; /* Warna cream lebih gelap */
-            color: #5c4033;
             text-align: center;
-            padding: 15px;
+            padding: 18px 20px;
+            font-size: 14px;
+            user-select: none;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .contact-form {
+                margin: 30px 20px 50px;
+                padding: 30px 20px;
+            }
+
+            .site-title {
+                font-size: 22px;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
         }
     </style>
 </head>
@@ -111,35 +198,64 @@
     <header>
         <div class="header-container">
             <div class="site-title">Perpustakaan Elisa</div>
-            <div class="nav-links">
+            <nav class="nav-links" role="navigation" aria-label="Main Navigation">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
-            </div>
+            </nav>
         </div>
     </header>
 
-    <section class="contact-form">
-        <h2>Get in Touch</h2>
-        <form id="contactForm">
+    <section class="contact-form" aria-labelledby="contactHeading">
+        <h2 id="contactHeading">Get in Touch</h2>
+        <form id="contactForm" novalidate>
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name" />
 
             <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
 
             <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
 
-            <button type="submit">Send Message</button>
+            <button type="submit" aria-label="Send Message">Send Message</button>
         </form>
-        <p id="responseMessage"></p>
+        <p id="responseMessage" role="alert" aria-live="polite"></p>
     </section>
 
     <footer>
         &copy; 2025 Perpustakaan Elisa. Terima kasih telah mengunjungi perpustakaan kami.
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Simple client-side form submission simulation
+        const contactForm = document.getElementById('contactForm');
+        const responseMessage = document.getElementById('responseMessage');
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Basic validation can be enhanced here
+            const name = this.name.value.trim();
+            const email = this.email.value.trim();
+            const message = this.message.value.trim();
+
+            if (!name || !email || !message) {
+                responseMessage.textContent = "Please fill out all fields.";
+                responseMessage.style.color = "#dc3545"; // red
+                return;
+            }
+
+            // Simulate submission delay
+            responseMessage.style.color = "#5c4033";
+            responseMessage.textContent = "Sending message...";
+
+            setTimeout(() => {
+                responseMessage.style.color = "#28a745"; // green
+                responseMessage.textContent = "Message sent successfully! Thank you.";
+                contactForm.reset();
+            }, 1500);
+        });
+    </script>
 
 </body>
 </html>
