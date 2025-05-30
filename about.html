@@ -4,15 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Biodata</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+      font-family: 'Poppins', sans-serif;
       background-color: #fdf5e6; /* Warna cream */
       display: flex;
       flex-direction: column;
@@ -21,76 +22,108 @@
 
     header {
       background-color: #f5deb3; /* Warna cream lebih gelap */
-      padding: 15px 30px;
+      padding: 20px 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     .header-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: #5c4033; /* Warna teks gelap untuk kontras */
+      color: #5c4033;
     }
 
     .site-title {
-      font-size: 22px;
-      font-weight: bold;
+      font-size: 26px;
+      font-weight: 700;
     }
 
     .nav-links {
       display: flex;
-      gap: 20px;
+      gap: 25px;
     }
 
     .nav-links a {
-      color: #5c4033; /* Warna teks gelap untuk kontras */
+      color: #5c4033;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      transition: all 0.3s ease;
     }
 
     .nav-links a:hover {
       text-decoration: underline;
-      color: #0073e6; /* Warna biru saat hover */
+      color: #0073e6;
     }
 
     main {
       flex: 1;
-      padding: 20px;
+      padding: 40px 20px;
       text-align: center;
     }
 
     h2 {
-      margin-bottom: 20px;
-      color: #5c4033; /* Warna teks gelap untuk kontras */
+      margin-bottom: 30px;
+      font-size: 30px;
+      color: #5c4033;
     }
 
     table {
-      width: 50%;
-      margin: auto;
+      width: 60%;
+      margin: 0 auto;
       border-collapse: collapse;
       background: white;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     th, td {
-      padding: 10px;
-      border: 1px solid #ddd;
+      padding: 15px 20px;
+      border-bottom: 1px solid #ddd;
+      font-size: 16px;
     }
 
     th {
-      background-color: #f5deb3; /* Warna cream lebih gelap */
-      color: white;
+      background-color: #f5deb3;
+      color: #5c4033;
+      text-transform: uppercase;
+      font-size: 15px;
+      font-weight: 700;
     }
 
-    a {
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    td a {
+      color: #0073e6;
+      font-weight: 600;
       text-decoration: none;
-      color: #0073e6; /* Warna biru untuk link */
+      transition: color 0.3s ease;
+    }
+
+    td a:hover {
+      text-decoration: underline;
     }
 
     footer {
-      background-color: #f5deb3; /* Warna cream lebih gelap */
+      background-color: #f5deb3;
       color: #5c4033;
       text-align: center;
-      padding: 15px;
+      padding: 20px 10px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      table {
+        width: 90%;
+      }
+
+      .header-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -99,36 +132,44 @@
   <header>
     <div class="header-container">
       <div class="site-title">Perpustakaan Elisa</div>
-      <div class="nav-links">
+      <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="contact.html">Contact Us</a>
-      </div>
+      </nav>
     </div>
   </header>
 
   <main>
     <h2>Biodata</h2>
     <table>
-      <tr>
-        <th>Informasi</th>
-        <th>Detail</th>
-      </tr>
-      <tr>
-        <td>Nama</td>
-        <td>Elisa Trianggi Hutabarat</td>
-      </tr>
-      <tr>
-        <td>Email</td>
-        <td>elisatrianggi750@gmail.com</td>
-      </tr>
-      <tr>
-        <td>Hobby</td>
-        <td>Berenang</td>
-      </tr>
-      <tr>
-        <td>Instagram</td>
-        <td><a href="https://instagram.com/elisa.trianggii" target="_blank">@elisa.trianggii</a></td>
-      </tr>
+      <thead>
+        <tr>
+          <th>Informasi</th>
+          <th>Detail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nama</td>
+          <td>Elisa Trianggi Hutabarat</td>
+        </tr>
+        <tr>
+          <td>NIM</td>
+          <td>220709012</td>
+        </tr>
+        <tr>
+          <td>Program Studi</td>
+          <td>Perpustakaan dan Sains Informasi</td>
+        </tr>
+        <tr>
+          <td>Fakultas</td>
+          <td><a href="https://example.com/fakultas-ilmu-budaya" target="_blank" rel="noopener noreferrer">Ilmu Budaya</a></td>
+        </tr>
+        <tr>
+          <td>Universitas</td>
+          <td><a href="https://www.universitassumaterautara.ac.id" target="_blank" rel="noopener noreferrer">Sumatera Utara</a></td>
+        </tr>
+      </tbody>
     </table>
   </main>
 
