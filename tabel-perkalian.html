@@ -9,17 +9,32 @@
       font-family: 'Segoe UI', sans-serif;
       background: #fef9f4;
       margin: 0;
-      padding: 20px;
+      padding: 0;
       color: #333;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    h1 {
-      font-size: 2.8em;
+    header {
+      width: 100%;
+      background-color: #f5deb3;
+      padding: 20px 30px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .site-title {
+      font-size: 28px;
+      font-weight: bold;
       color: #5e3c2c;
-      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.4em;
+      color: #5e3c2c;
+      margin: 30px 0 20px;
+      text-align: center;
     }
 
     .table-container {
@@ -119,6 +134,7 @@
       margin-top: 60px;
       font-size: 14px;
       color: #aaa;
+      padding-bottom: 20px;
     }
 
     @media (max-width: 600px) {
@@ -134,8 +150,15 @@
 </head>
 <body>
 
+  <!-- HEADER -->
+  <header>
+    <div class="site-title">📚 PERPUSTAKAAN ELISA</div>
+  </header>
+
+  <!-- JUDUL UTAMA -->
   <h1>🧠 Tabel Perkalian Interaktif 1–10</h1>
 
+  <!-- TABEL PERKALIAN -->
   <div class="table-container">
     <table>
       <thead>
@@ -146,9 +169,6 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Isi tabel dari 1–10 -->
-        <!-- Gunakan JS atau isi manual seperti di bawah -->
-        <!-- Baris ke-1 -->
         <tr><th>1</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
         <tr><th>2</th><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td><td>14</td><td>16</td><td>18</td><td>20</td></tr>
         <tr><th>3</th><td>3</td><td>6</td><td>9</td><td>12</td><td>15</td><td>18</td><td>21</td><td>24</td><td>27</td><td>30</td></tr>
@@ -163,6 +183,7 @@
     </table>
   </div>
 
+  <!-- KALKULATOR -->
   <div class="calculator">
     <h2>🧮 Kalkulator Perkalian</h2>
     <input type="number" id="angka1" placeholder="Angka 1" />
@@ -172,6 +193,7 @@
     <div class="result" id="hasil"></div>
   </div>
 
+  <!-- FOOTER -->
   <footer>
     &copy; 2025 Perpustakaan Elisa • Dibuat dengan ❤️ untuk pembelajar cerdas
   </footer>
