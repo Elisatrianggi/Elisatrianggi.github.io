@@ -1,245 +1,312 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Orang Melambai</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fdf5e6;
-            color: #333;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perpustakaan Elisa</title>
+  <style>
+    /* Reset dan dasar */
+    * {
+      box-sizing: border-box;
+    }
 
-        h1 {
-            color: #444;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fdf5e6;
+      color: #3a3a3a;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
 
-        nav {
-            background-color: #f5deb3;
-            padding: 10px 0;
-        }
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #a57c4e, #d2b48c);
+      color: #fff;
+      padding: 25px 10px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+    header p {
+      margin: 0;
+      font-size: 1.15rem;
+      font-style: italic;
+      opacity: 0.85;
+    }
 
-        .menu {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
+    /* Navigation */
+    nav {
+      background-color: #f5deb3;
+      box-shadow: inset 0 -2px 5px rgba(0,0,0,0.1);
+    }
 
-        .menu li {
-            display: inline;
-            margin: 0 15px;
-        }
+    .menu {
+      list-style: none;
+      padding: 10px 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .menu li {
+      display: inline;
+    }
+    .menu a {
+      text-decoration: none;
+      color: #4a3c2b;
+      transition: color 0.3s ease;
+      padding: 6px 8px;
+      border-radius: 4px;
+    }
+    .menu a:hover,
+    .menu a:focus {
+      color: #007bff;
+      background-color: #f0e1c6;
+      outline: none;
+    }
 
-        .menu a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
+    /* Main Content */
+    main {
+      flex: 1;
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 15px;
+      animation: fadeIn 1.2s ease-in-out;
+    }
 
-        .menu a:hover {
-            color: #007bff;
-        }
+    main h1 {
+      font-size: 2.2rem;
+      color: #5e4631;
+      margin-bottom: 8px;
+    }
 
-        .btn {
-            display: inline-block;
-            background-color: #d2b48c;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
+    main p strong {
+      font-size: 1.1rem;
+      color: #6b553f;
+      display: block;
+      margin-bottom: 20px;
+    }
 
-        .btn:hover {
-            background-color: #c19a6b;
-            animation: wave 0.8s ease-in-out;
-        }
+    .btn {
+      display: inline-block;
+      background-color: #a57c4e;
+      color: #fff;
+      padding: 12px 30px;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(165,124,78,0.5);
+      transition: background-color 0.3s ease, transform 0.25s ease;
+      margin-bottom: 30px;
+    }
+    .btn:hover,
+    .btn:focus {
+      background-color: #7b5c2d;
+      transform: scale(1.05);
+      outline: none;
+    }
 
-        main {
-            margin: 30px auto;
-            width: 90%;
-            max-width: 1200px;
-            animation: fadeIn 1.5s ease-in-out;
-            flex: 1;
-        }
+    /* Buku dan Event Container */
+    .buku, .event-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 20px;
+      padding-bottom: 15px;
+    }
 
-        footer {
-            background-color: #f5deb3;
-            padding: 20px 10px;
-            font-size: 14px;
-            color: #555;
-        }
+    .buku-item, .event-item {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+      width: 210px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .buku-item:hover, .event-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
 
-        .buku, .event-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 30px;
-        }
+    .buku-item img, .event-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: inset 0 0 7px #e1ccb0;
+    }
 
-        .buku-item, .event-item {
-            border: 1px solid #ccc;
-            padding: 10px;
-            width: 200px;
-            text-align: center;
-        }
+    .buku-item a, .event-item a {
+      display: block;
+      margin-top: 12px;
+      font-weight: 700;
+      color: #4a6fa5;
+      text-decoration: none;
+      font-size: 1.05rem;
+      transition: color 0.25s ease;
+    }
+    .buku-item a:hover, .event-item a:hover {
+      text-decoration: underline;
+      color: #285580;
+    }
 
-        .buku-item img, .event-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
+    /* Footer */
+    footer {
+      background-color: #f5deb3;
+      padding: 18px 10px;
+      font-size: 14px;
+      color: #5a4a32;
+      text-align: center;
+      box-shadow: inset 0 1px 5px rgba(0,0,0,0.1);
+      margin-top: auto;
+    }
 
-        .buku-item a, .event-item a {
-            text-decoration: none;
-            color: #007BFF;
-            font-weight: bold;
-            display: block;
-            margin-top: 10px;
-        }
+    /* Cookie Banner */
+    .cookie-banner {
+      background-color: #fff3cd;
+      color: #856404;
+      padding: 15px 10px;
+      border: 1px solid #ffeeba;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: none;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.12);
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      z-index: 9999;
+    }
+    .cookie-banner button {
+      background-color: #a57c4e;
+      color: white;
+      border: none;
+      padding: 7px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .cookie-banner button:hover {
+      background-color: #7b5c2d;
+    }
 
-        .event-item a:hover {
-            text-decoration: underline;
-        }
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-        .cookie-banner {
-            background-color: #fff3cd;
-            color: #856404;
-            padding: 15px;
-            border: 1px solid #ffeeba;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            display: none;
-        }
-
-        .cookie-banner button {
-            background-color: #d2b48c;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            margin-left: 10px;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-
-        .cookie-banner button:hover {
-            background-color: #c19a6b;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes wave {
-            0% { transform: rotate(0deg); }
-            15% { transform: rotate(10deg); }
-            30% { transform: rotate(-8deg); }
-            45% { transform: rotate(8deg); }
-            60% { transform: rotate(-5deg); }
-            75% { transform: rotate(5deg); }
-            100% { transform: rotate(0deg); }
-        }
-    </style>
+  </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="registration.html">Registrasi</a></li>
-                <li><a href="tabel-perkalian.html">Tabel Perkalian</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>📖 Perpustakaan Elisa</h1>
+    <p>Rumah Ilmu dan Petualangan Literasi Digital</p>
+  </header>
 
-    <main>
-        <h1>Selamat datang di perpustakaan online Elisa</h1>
-        <p><strong>Selamat datang di Perpustakaan Digital Elisa – Dunia Pengetahuan dalam Genggaman! 📚✨
-        Akses buku, di mana saja. Mari jelajahi ilmu tanpa batas!</strong></p>
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="registration.html">Registrasi</a></li>
+      <li><a href="tabel-perkalian.html">Tabel Perkalian</a></li>
+    </ul>
+  </nav>
 
-        <p>Klik tombol di bawah untuk mengunjungi Perpustakaan IT Del:</p>
-        <a href="https://www.del.ac.id/" target="_blank" class="btn">Kunjungi Perpustakaan IT Del</a>
+  <main>
+    <h1>Selamat datang di perpustakaan online Elisa</h1>
+    <p><strong>Selamat datang di Perpustakaan Digital Elisa – Dunia Pengetahuan dalam Genggaman! 📚✨
+    Akses buku, di mana saja. Mari jelajahi ilmu tanpa batas!</strong></p>
 
-        <h2>Daftar Buku Digital</h2>
-        <div class="buku">
-            <div class="buku-item">
-                <img src="https://upload.wikimedia.org/wikipedia/id/8/8e/Laskar_pelangi_sampul.jpg" alt="Laskar Pelangi">
-                <a href="https://wongbagoes.files.wordpress.com/2008/04/laskar-pelangi.pdf" target="_blank">Laskar Pelangi</a>
-            </div>
-            <div class="buku-item">
-                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565658920i/1398034.jpg" alt="Bumi Manusia">
-                <a href="https://mtsaluswahbergas.sch.id/wp-content/uploads/2024/11/Bumi-Manusia-by-Pramoedya-Ananta-Toer.pdf" target="_blank">Bumi Manusia</a>
-            </div>
-            <div class="buku-item">
-                <img src="https://upload.wikimedia.org/wikipedia/id/8/89/Sang_Pemimpi_sampul.jpg" alt="Sang Pemimpi">
-                <a href="https://kalteng.kemenag.go.id/file/majalah/1613240702216.pdf" target="_blank">Sang Pemimpi</a>
-            </div>
-            <div class="buku-item">
-                <img src="https://images.tokopedia.net/img/cache/700/product-1/2018/9/25/11999564/11999564_79f965ce-eaf6-4aeb-9ef6-6ee18f364b33_600_890.jpg" alt="Laut Bercerita">
-                <a href="https://lib.atim.ac.id/uploaded_files/temporary/DigitalCollection/MTJkZDc3OWFlNzI1NTY0ZGM0NzJhYTQ1ZWRjNDQ5YzRiNWI1NjIxYg==.pdf" target="_blank">Laut Bercerita</a>
-            </div>
-            <div class="buku-item">
-                <img src="https://inc.mizanstore.com/aassets/img/com_cart/produk/PULANG.jpg" alt="Pulang">
-                <a href="https://pustakapidiejaya.id/uploaded_files/temporary/DigitalCollection/MjEyYzg1NzBhNGZiMjQ2ZGZmMTk1MDRjYjU2ZTMzMTJiYTVjMjY5NA==.pdf" target="_blank">Pulang</a>
-            </div>
-        </div>
+    <p>Klik tombol di bawah untuk mengunjungi Perpustakaan IT Del:</p>
+    <a href="https://www.del.ac.id/" target="_blank" class="btn">Kunjungi Perpustakaan IT Del</a>
 
-        <h2>Event Perpustakaan Terbaru</h2>
-        <div class="event-container">
-            <div class="event-item">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvYbqgX3UUEFLTdxZ48i1_izwvh170AptYbQ&s" alt="Pameran Buku">
-                <a href="https://www.instagram.com/p/DDY0CmtvX1X/?utm_source=ig_web_copy_link" target="_blank">Pameran Buku</a>
-            </div>
-            <div class="event-item">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPkmXyGOpNNENgcoLsalQcAhFEugXxDNUksA&s" alt="Seminar Nasional">
-                <a href="https://www.instagram.com/p/DJBKaXGyffS/?utm_source=ig_web_copy_link" target="_blank">Seminar Nasional</a>
-            </div>
-            <div class="event-item">
-                <img src="https://doktor.fst.unair.ac.id/wp-content/uploads/sites/21/2025/04/workshop_puapt-ha-2025.jpeg" alt="Workshop">
-                <a href="https://www.instagram.com/p/DJNw9UOzYNc/?igsh=aXB3emxybjQzNXY2" target="_blank">Workshop</a>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        &copy; 2025 Perpustakaan Elisa. Dibuat dengan ❤️ untuk penyebaran ilmu pengetahuan.
-    </footer>
-
-    <div class="cookie-banner" id="cookie-banner">
-        Situs ini menggunakan cookie untuk meningkatkan pengalaman pengguna. 
-        <button onclick="acceptCookies()">Saya Setuju</button>
+    <h2>Daftar Buku Digital</h2>
+    <div class="buku">
+      <div class="buku-item">
+        <img src="https://upload.wikimedia.org/wikipedia/id/8/8e/Laskar_pelangi_sampul.jpg" alt="Laskar Pelangi" />
+        <a href="https://wongbagoes.files.wordpress.com/2008/04/laskar-pelangi.pdf" target="_blank" rel="noopener">Laskar Pelangi</a>
+      </div>
+      <div class="buku-item">
+        <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565658920i/1398034.jpg" alt="Bumi Manusia" />
+        <a href="https://mtsaluswahbergas.sch.id/wp-content/uploads/2024/11/Bumi-Manusia-by-Pramoedya-Ananta-Toer.pdf" target="_blank" rel="noopener">Bumi Manusia</a>
+      </div>
+      <div class="buku-item">
+        <img src="https://upload.wikimedia.org/wikipedia/id/8/89/Sang_Pemimpi_sampul.jpg" alt="Sang Pemimpi" />
+        <a href="https://kalteng.kemenag.go.id/file/majalah/1613240702216.pdf" target="_blank" rel="noopener">Sang Pemimpi</a>
+      </div>
+      <div class="buku-item">
+        <img src="https://images.tokopedia.net/img/cache/700/product-1/2018/9/25/11999564/11999564_79f965ce-eaf6-4aeb-9ef6-6ee18f364b33_600_890.jpg" alt="Laut Bercerita" />
+        <a href="https://lib.atim.ac.id/uploaded_files/temporary/DigitalCollection/MTJkZDc3OWFlNzI1NTY0ZGM0NzJhYTQ1ZWRjNDQ5YzRiNWI1NjIxYg==.pdf" target="_blank" rel="noopener">Laut Bercerita</a>
+      </div>
+      <div class="buku-item">
+        <img src="https://inc.mizanstore.com/aassets/img/com_cart/produk/PULANG.jpg" alt="Pulang" />
+        <a href="https://pustakapidiejaya.id/uploaded_files/temporary/DigitalCollection/MjEyYzg1NzBhNGZiMjQ2ZGZmMTk1MDRjYjU2ZTMzMTJiYTVjMjY5NA==.pdf" target="_blank" rel="noopener">Pulang</a>
+      </div>
     </div>
 
-    <script>
-        function acceptCookies() {
-            localStorage.setItem("cookieAccepted", "true");
-            document.getElementById("cookie-banner").style.display = "none";
-        }
+    <h2>Event Perpustakaan Terbaru</h2>
+    <div class="event-container">
+      <div class="event-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvYbqgX3UUEFLTdxZ48i1_izwvh170AptYbQ&s" alt="Pameran Buku" />
+        <a href="https://www.instagram.com/p/DDY0CmtvX1X/?utm_source=ig_web_copy_link" target="_blank" rel="noopener">Pameran Buku</a>
+      </div>
+      <div class="event-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPkmXyGOpNNENgcoLsalQcAhFEugXxDNUksA&s" alt="Seminar Nasional" />
+        <a href="https://www.instagram.com/p/DJBKaXGyffS/?utm_source=ig_web_copy_link" target="_blank" rel="noopener">Seminar Nasional</a>
+      </div>
+      <div class="event-item">
+        <img src="https://doktor.fst.unair.ac.id/wp-content/uploads/sites/21/2025/04/workshop_puapt-ha-2025.jpeg" alt="Workshop" />
+        <a href="https://www.instagram.com/p/DJNw9UOzYNc/?igsh=aXB3emxybjQzNXY2" target="_blank" rel="noopener">Workshop</a>
+      </div>
+    </div>
+  </main>
 
-        window.onload = function () {
-            if (!localStorage.getItem("cookieAccepted")) {
-                document.getElementById("cookie-banner").style.display = "block";
-            }
-        };
-    </script>
+  <footer>
+    &copy; 2025 Perpustakaan Elisa. Dibuat dengan ❤️ untuk penyebaran ilmu pengetahuan.
+  </footer>
+
+  <div class="cookie-banner" id="cookie-banner">
+    Situs ini menggunakan cookie untuk meningkatkan pengalaman pengguna.
+    <button onclick="acceptCookies()">Saya Setuju</button>
+  </div>
+
+  <script>
+    function acceptCookies() {
+      localStorage.setItem("cookieAccepted", "true");
+      document.getElementById("cookie-banner").style.display = "none";
+    }
+
+    window.onload = function () {
+      if (!localStorage.getItem("cookieAccepted")) {
+        document.getElementById("cookie-banner").style.display = "flex";
+      }
+    };
+  </script>
+
 </body>
 </html>
