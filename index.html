@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fdf5e6; /* warna cream */
+            background-color: #fdf5e6;
             color: #333;
             text-align: center;
             margin: 0;
@@ -22,7 +22,7 @@
         }
 
         nav {
-            background-color: #f5deb3; /* warna cream lebih gelap */
+            background-color: #f5deb3;
             padding: 10px 0;
         }
 
@@ -49,7 +49,7 @@
 
         .btn {
             display: inline-block;
-            background-color: #d2b48c; /* warna tombol cream kecoklatan */
+            background-color: #d2b48c;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -63,7 +63,9 @@
         }
 
         main {
-            margin-top: 30px;
+            margin: 30px auto;
+            width: 90%;
+            max-width: 1200px;
             animation: fadeIn 1.5s ease-in-out;
             flex: 1;
         }
@@ -75,7 +77,64 @@
             color: #555;
         }
 
-        /* Animasi tambahan */
+        .buku, .event-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .buku-item, .event-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .buku-item img, .event-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .buku-item a, .event-item a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .event-item a:hover {
+            text-decoration: underline;
+        }
+
+        .cookie-banner {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border: 1px solid #ffeeba;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: none;
+        }
+
+        .cookie-banner button {
+            background-color: #d2b48c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            margin-left: 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .cookie-banner button:hover {
+            background-color: #c19a6b;
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -106,9 +165,8 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <!-- Menu Registrasi -->
-                    <li class="nav-item"><a class="nav-link" href="registration.html" id="registration">Registrasi</a></li>
-                <li><a href="tabel-perkalian.html">Tabel Perkalian</a></li> <!-- Menu baru ditambahkan di sini -->
+                <li><a href="registration.html">Registrasi</a></li>
+                <li><a href="tabel-perkalian.html">Tabel Perkalian</a></li>
             </ul>
         </nav>
     </header>
@@ -119,149 +177,69 @@
         Akses buku, di mana saja. Mari jelajahi ilmu tanpa batas!</strong></p>
 
         <p>Klik tombol di bawah untuk mengunjungi Perpustakaan IT Del:</p>
-        <a href="https://www.del.ac.id/" target="_blank" class="btn">
-            Kunjungi Perpustakaan IT Del
-    </main>
-            <!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <title>Perpustakaan - Daftar Buku</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .buku {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .buku-item {
-            border: 1px solid #ccc;
-            padding: 10px;
-            width: 200px;
-            text-align: center;
-        }
-        .buku-item img {
-            max-width: 100%;
-            height: auto;
-        }
-        .buku-item a {
-            text-decoration: none;
-            color: #007BFF;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
+        <a href="https://www.del.ac.id/" target="_blank" class="btn">Kunjungi Perpustakaan IT Del</a>
 
-    <h1>Daftar Buku Perpustakaan</h1>
+        <h2>Daftar Buku Perpustakaan</h2>
+        <div class="buku">
+            <div class="buku-item">
+                <img src="https://upload.wikimedia.org/wikipedia/id/8/8e/Laskar_pelangi_sampul.jpg" alt="Laskar Pelangi">
+                <a href="https://wongbagoes.files.wordpress.com/2008/04/laskar-pelangi.pdf" target="_blank">Laskar Pelangi</a>
+            </div>
+            <div class="buku-item">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565658920i/1398034.jpg" alt="Bumi Manusia">
+                <a href="https://mtsaluswahbergas.sch.id/wp-content/uploads/2024/11/Bumi-Manusia-by-Pramoedya-Ananta-Toer.pdf" target="_blank">Bumi Manusia</a>
+            </div>
+            <div class="buku-item">
+                <img src="https://upload.wikimedia.org/wikipedia/id/8/89/Sang_Pemimpi_sampul.jpg" alt="Sang Pemimpi">
+                <a href="https://kalteng.kemenag.go.id/file/majalah/1613240702216.pdf" target="_blank">Sang Pemimpi</a>
+            </div>
+            <div class="buku-item">
+                <img src="https://images.tokopedia.net/img/cache/700/product-1/2018/9/25/11999564/11999564_79f965ce-eaf6-4aeb-9ef6-6ee18f364b33_600_890.jpg" alt="Laut Bercerita">
+                <a href="https://lib.atim.ac.id/uploaded_files/temporary/DigitalCollection/MTJkZDc3OWFlNzI1NTY0ZGM0NzJhYTQ1ZWRjNDQ5YzRiNWI1NjIxYg==.pdf" target="_blank">Laut Bercerita</a>
+            </div>
+            <div class="buku-item">
+                <img src="https://inc.mizanstore.com/aassets/img/com_cart/produk/PULANG.jpg" alt="Pulang">
+                <a href="https://pustakapidiejaya.id/uploaded_files/temporary/DigitalCollection/MjEyYzg1NzBhNGZiMjQ2ZGZmMTk1MDRjYjU2ZTMzMTJiYTVjMjY5NA==.pdf" target="_blank">Pulang</a>
+            </div>
+        </div>
 
-    <div class="buku">
-        <div class="buku-item">
-            <img src="https://upload.wikimedia.org/wikipedia/id/8/8e/Laskar_pelangi_sampul.jpg" alt="Cover Buku 1">
-            <p><a href="https://wongbagoes.files.wordpress.com/2008/04/laskar-pelangi.pdf" target="_blank">Laskar Pelangi</a></p>
+        <h2>Event Perpustakaan Terbaru</h2>
+        <div class="event-container">
+            <div class="event-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvYbqgX3UUEFLTdxZ48i1_izwvh170AptYbQ&s" alt="Pameran Buku">
+                <a href="https://www.instagram.com/p/DDY0CmtvX1X/?utm_source=ig_web_copy_link" target="_blank">Pameran Buku</a>
+            </div>
+            <div class="event-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPkmXyGOpNNENgcoLsalQcAhFEugXxDNUksA&s" alt="Seminar Nasional">
+                <a href="https://www.instagram.com/p/DJBKaXGyffS/?utm_source=ig_web_copy_link" target="_blank">Seminar Nasional</a>
+            </div>
+            <div class="event-item">
+                <img src="https://doktor.fst.unair.ac.id/wp-content/uploads/sites/21/2025/04/workshop_puapt-ha-2025.jpeg" alt="Workshop">
+                <a href="https://www.instagram.com/p/DJNw9UOzYNc/?igsh=aXB3emxybjQzNXY2" target="_blank">Workshop</a>
+            </div>
         </div>
-        <div class="buku-item">
-            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565658920i/1398034.jpg" alt="Cover Buku 2">
-            <p><a href="https://mtsaluswahbergas.sch.id/wp-content/uploads/2024/11/Bumi-Manusia-by-Pramoedya-Ananta-Toer.pdf" target="_blank">Bumi Manusia</a></p>
-        </div>
-        <div class="buku-item">
-            <img src="https://upload.wikimedia.org/wikipedia/id/8/89/Sang_Pemimpi_sampul.jpg" alt="Cover Buku 3">
-            <p><a https://kalteng.kemenag.go.id/file/majalah/1613240702216.pdf" target="_blank">Sang Pemimpi</a></p>
-        </div>
-        <div class="buku-item">
-            <img src="https://images.tokopedia.net/img/cache/700/product-1/2018/9/25/11999564/11999564_79f965ce-eaf6-4aeb-9ef6-6ee18f364b33_600_890.jpg" alt="Cover Buku 4">
-            <p><a href="https://lib.atim.ac.id/uploaded_files/temporary/DigitalCollection/MTJkZDc3OWFlNzI1NTY0ZGM0NzJhYTQ1ZWRjNDQ5YzRiNWI1NjIxYg==.pdf" target="_blank">Laut Bercerita</a></p>
-        </div>
-        <div class="buku-item">
-            <img src="https://inc.mizanstore.com/aassets/img/com_cart/produk/PULANG.jpg"Cover Buku 5">
-            <p><a href="https://pustakapidiejaya.id/uploaded_files/temporary/DigitalCollection/MjEyYzg1NzBhNGZiMjQ2ZGZmMTk1MDRjYjU2ZTMzMTJiYTVjMjY5NA==.pdf" target="_blank">Pulang</a></p>
-        </div>
-    </div>
-<head>
-    <meta charset="UTF-8">
-    <title>Event Perpustakaan</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .event-container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .event-item {
-            width: 250px;
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
-        }
-        .event-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-        .event-item a {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
-            color: #0066cc;
-            text-decoration: none;
-        }
-        .event-item a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-
-    <h1>Event Perpustakaan Terbaru</h1>
-
-    <div class="event-container">
-        <div class="event-item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvYbqgX3UUEFLTdxZ48i1_izwvh170AptYbQ&s" alt="Pameran Buku">
-            <a href="https://www.instagram.com/p/DDY0CmtvX1X/?utm_source=ig_web_copy_link"_blank">Pameran Buku</a>
-        </div>
-        <div class="event-item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPkmXyGOpNNENgcoLsalQcAhFEugXxDNUksA&s" alt="Seminar Nasional">
-            <a href="https://www.instagram.com/p/DJBKaXGyffS/?utm_source=ig_web_copy_link"_blank">Seminar Nasional</a>
-        </div>
-        <div class="event-item">
-            <img src="https://doktor.fst.unair.ac.id/wp-content/uploads/sites/21/2025/04/workshop_puapt-ha-2025.jpeg" alt="Workshop">
-            <a href="https://www.instagram.com/p/DJNw9UOzYNc/?igsh=aXB3emxybjQzNXY2" target="_blank">Workshop</a>
-        </div>
-    </div>
-<div class="cookie-banner" id="cookie-banner">
-    Situs ini menggunakan cookie untuk meningkatkan pengalaman pengguna. 
-    <button onclick="acceptCookies()">Saya Setuju</button>
-</div>
-
-<script>
-    function acceptCookies() {
-        localStorage.setItem("cookieAccepted", "true");
-        document.getElementById("cookie-banner").style.display = "none";
-    }
-
-    window.onload = function () {
-        if (!localStorage.getItem("cookieAccepted")) {
-            document.getElementById("cookie-banner").style.display = "block";
-        }
-    };
-</script>
-</body>
-</html>
-</body>
-</html>
-        </a>
     </main>
 
     <footer>
         &copy; 2025 Perpustakaan Elisa. Dibuat dengan ❤️ untuk penyebaran ilmu pengetahuan.
     </footer>
 
-    <!-- Hubungkan ke script.js -->
-    <script src="script.js"></script>
+    <div class="cookie-banner" id="cookie-banner">
+        Situs ini menggunakan cookie untuk meningkatkan pengalaman pengguna. 
+        <button onclick="acceptCookies()">Saya Setuju</button>
+    </div>
 
+    <script>
+        function acceptCookies() {
+            localStorage.setItem("cookieAccepted", "true");
+            document.getElementById("cookie-banner").style.display = "none";
+        }
+
+        window.onload = function () {
+            if (!localStorage.getItem("cookieAccepted")) {
+                document.getElementById("cookie-banner").style.display = "block";
+            }
+        };
+    </script>
 </body>
 </html>
